@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{DE451B9C-9BB7-47AE-942C-9765877E9296}|WebApplication">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Shop/Controllers/CarsController.cs">
+    <Files>
+      <File FileName="Shop/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="Shop/Views/_ViewImports.cshtml" Line="2" Column="1" />
+      <File FileName="Shop/Views/Cars/List.cshtml" Line="12" Column="2" />
+      <File FileName="Shop/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="Shop/Controllers/CarsController.cs" Line="28" Column="29" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Shop" expanded="True">
+            <Node name="Shop" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="CarsController.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Cars" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Shop PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
