@@ -1,12 +1,17 @@
 
 <h1>All cars</h1>
 <h2>@Model.CarCategory</h2>
-@{
-    foreach (var car in Model.AllCars)
-    {
-        <div>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var car in Model.AllCars)
+        {
+        <div class="col-lg-4">
+            <img class="img-thumbnail" src="@car.ImageURL" alt="@car.Name" />
             <h2>Model: @car.Name</h2>
             <p>Price: @car.Price.ToString("c")</p>
+
+            <p><a class="btm btn-warning" href="#"> More Info</a></p>
         </div>
+        }
     }
-}
+</div>

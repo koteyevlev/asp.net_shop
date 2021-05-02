@@ -19,17 +19,17 @@ namespace Shop.Data.Mocks
                     new Car
                     {
                         Name="Tesla A", Available = true, ShortDescription = "", LongDescription = "",
-                        Price = 45000, IsFavourite = true, ImageURL="", Category = _categoryCars.AllCategories.First()
+                        Price = 45000, IsFavourite = true, ImageURL="/img/tesla.png", Category = _categoryCars.AllCategories.First()
                     },
                     new Car
                     {
                         Name="Tesla C", Available = false, ShortDescription = "", LongDescription = "",
-                        Price = 54000, IsFavourite = true, ImageURL="", Category = _categoryCars.AllCategories.First()
+                        Price = 54000, IsFavourite = true, ImageURL="/img/tesla.png", Category = _categoryCars.AllCategories.First()
                     },
                     new Car
                     {
                         Name="Lada Granta", Available = true, ShortDescription = "", LongDescription = "",
-                        Price = 4000, IsFavourite = false, ImageURL="", Category = _categoryCars.AllCategories.Last()
+                        Price = 4000, IsFavourite = false, ImageURL="/img/granta.png", Category = _categoryCars.AllCategories.Last()
                     },
                 };
             }
