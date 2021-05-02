@@ -1,0 +1,6 @@
+.DS_Store
+obj/
+Shop/obj/
+*/bin/
+Shop/bin/
+.idea/
