@@ -6,21 +6,35 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Shop.Data;
 using Shop.Data.Interfaces;
 using Shop.Data.Mocks;
+using Microsoft.EntityFrameworkCore;
+using Shop.Data.Repository;
 
 namespace Shop
 {
     public class Startup
     {
+        public readonly IConfigurationRoot configurationString;
+
+        [Obsolete]
+        public Startup(Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
+        {
+            configurationString = new ConfigurationBuilder().SetBasePath(hostingEnvironment.ContentRootPath).AddJsonFile("dbsettings.json").Build();
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IAllCars, MockCars>();
-            services.AddTransient<ICarsCategory, MockCategory>();
+            services.AddDbContext<AppDBContent>(options => options.UseMySql(configurationString.GetConnectionString("DefaultConnection"),
+                new MySqlServerVersion(new Version(8, 0, 11))));
+            services.AddTransient<IAllCars, CarRepository>();
+            services.AddTransient<ICarsCategory, CategoryRepository>();
             services.AddMvc();
             services.AddControllersWithViews(mvcOptions=>
             {
@@ -35,6 +49,11 @@ namespace Shop
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                DBObject.Initial(scope.ServiceProvider.GetRequiredService<AppDBContent>());
+            }
         }
     }
 }
